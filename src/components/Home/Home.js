@@ -8,6 +8,7 @@ import About from '../../About/pages/About';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import Information from '../../Information/components/Information';
 import Header from '../../shared/components/Header';
+import Admin from '../../Admin/Admin';
 
 const Home = () => {
     const [items, setItems] = useState([{ id: 'c1', text: 'Login' },
@@ -37,7 +38,14 @@ const Home = () => {
                         <About />
                     </Route>
                     <Route path="/info" exact>
+                        <Header />
                         <Information />
+                    </Route>
+                    <Route path="/signin" exact>
+                        <Header />
+                    </Route>
+                    <Route path="/admin" exact>
+                        <Admin />
                     </Route>
                     <Redirect to="/" />
                 </Switch>

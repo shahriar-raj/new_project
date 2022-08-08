@@ -5,23 +5,26 @@ import './BCarousel.css';
 function BCarousel() {
     return (
         <Carousel className='yes'>
-            <Carousel.Item>
+            <Carousel.Item className='yes2'>
                 <img
                     className="d-block w-100"
                     src="board.png"
                     alt="First slide"
+                    height={"850px"}
+                    width={"600px"}
                 />
-                <Carousel.Caption>
+                <Carousel.Caption >
                     <h3>First slide label</h3>
                     <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                 </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
+            <Carousel.Item className='yes2'>
                 <img
                     className="d-block w-100"
                     src="book-stack.png"
                     alt="Second slide"
-                    width="200px"
+                    height={"850px"}
+                    width={"600px"}
                 />
 
                 <Carousel.Caption>
@@ -29,12 +32,13 @@ function BCarousel() {
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
+            <Carousel.Item className='yes2'>
                 <img
                     className="d-block w-100"
                     src="book-stack1.png"
                     alt="Third slide"
-                    width="200px"
+                    height={"850px"}
+                    width={"600px"}
                 />
 
                 <Carousel.Caption>

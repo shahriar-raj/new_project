@@ -1,5 +1,13 @@
 .yes {
-    width: 800px;
-    margin-left: 20rem;
-    padding: 20px;
+    /* width: 700px; */
+    /* margin-left: 25rem; */
+    height: 900px;
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
+.yes2 {
+    height: 900px;
+    padding-top: 10px;
+    padding-bottom: 40px;
 }

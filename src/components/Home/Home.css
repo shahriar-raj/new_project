@@ -52,9 +52,10 @@
 }
 
 .column {
-    background-color: rgb(67, 66, 63);
+    background-color: rgb(114, 114, 114);
+    width: 1515px;
     height: 100px;
-    position: sticky;
+    position: static;
 }
 
 
@@ -79,8 +80,14 @@
 
 .rp {
     float: left;
-    width: 90%;
+    width: 40%;
     text-align: left;
+}
+
+.nv {
+    float: left;
+    width: 50%;
+    text-align: center;
 }
 
 .c3 {
