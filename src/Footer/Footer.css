@@ -1,0 +1,19 @@
+.abrar {
+    float: left;
+    width: 50%;
+    height: 194px;
+    text-align: center;
+    font-weight: bolder;
+    background-color: black;
+    color: rgb(134, 131, 131);
+}
+
+.raj {
+    float: right;
+    width: 50%;
+    height: 194px;
+    text-align: center;
+    font-weight: bolder;
+    background-color: rgb(134, 131, 131);
+    color: black;
+}
