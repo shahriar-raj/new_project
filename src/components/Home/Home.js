@@ -4,7 +4,7 @@ import List from '../List';
 import NewGoal from '../NewGoal';
 import 'bootstrap/dist/css/bootstrap.css';
 import BCarousel from '../BCarousel/BCarousel';
-import About from '../../About/pages/About';
+import About from '../../About/About';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import Information from '../../Information/components/Information';
 import Header from '../../shared/components/Header';
