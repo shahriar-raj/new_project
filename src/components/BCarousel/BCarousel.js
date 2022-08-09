@@ -8,10 +8,10 @@ function BCarousel() {
             <Carousel.Item className='yes2'>
                 <img
                     className="d-block w-100"
-                    src="board.png"
+                    src="pngtree-concept-of-online-exam-on-internet-png-image.png"
                     alt="First slide"
                     height={"850px"}
-                    width={"600px"}
+                    width={"500px"}
                 />
                 <Carousel.Caption >
                     <h3>First slide label</h3>

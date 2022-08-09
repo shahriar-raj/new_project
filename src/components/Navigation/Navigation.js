@@ -15,11 +15,11 @@ const Navigation = () => {
                         <Nav.Link href="/about"><b>About</b></Nav.Link>
                         <Nav.Link href="/info"><b>Information</b></Nav.Link>
                         <NavDropdown title="SignUp" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/">As Student</NavDropdown.Item>
-                            <NavDropdown.Item href="/">
+                            <NavDropdown.Item href="/s_signup">As Student</NavDropdown.Item>
+                            <NavDropdown.Item href="/t_signup">
                                 As Teacher
                             </NavDropdown.Item>
-                            <NavDropdown.Item href="/">As Guardian</NavDropdown.Item>
+                            <NavDropdown.Item href="/g_signup">As Guardian</NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link href="/signin"><b>SignIn</b></Nav.Link>
                     </Nav>

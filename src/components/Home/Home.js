@@ -9,6 +9,9 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-d
 import Information from '../../Information/components/Information';
 import Header from '../../shared/components/Header';
 import Admin from '../../Admin/Admin';
+import S_SignUp from '../../SignUp/S_SignUp';
+import T_SignUp from '../../SignUp/T_SignUp';
+import G_SignUp from '../../SignUp/G_SignUp';
 
 const Home = () => {
     const [items, setItems] = useState([{ id: 'c1', text: 'Login' },
@@ -43,6 +46,18 @@ const Home = () => {
                     </Route>
                     <Route path="/signin" exact>
                         <Header />
+                    </Route>
+                    <Route path="/s_signup" exact>
+                        <Header />
+                        <S_SignUp />
+                    </Route>
+                    <Route path="/t_signup" exact>
+                        <Header />
+                        <T_SignUp />
+                    </Route>
+                    <Route path="/g_signup" exact>
+                        <Header />
+                        <G_SignUp />
                     </Route>
                     <Route path="/admin" exact>
                         <Admin />
