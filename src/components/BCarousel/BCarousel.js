@@ -46,6 +46,19 @@ function BCarousel() {
                     <p>Classes, Attendance, Results all managed in one system</p>
                 </Carousel.Caption>
             </Carousel.Item>
+            <Carousel.Item className='yes2'>
+                <img
+                    className="d-block w-100"
+                    src="children.png"
+                    alt="First slide"
+                    height={"560px"}
+                    width={"380px"}
+                />
+                <Carousel.Caption className='cap'>
+                    <h3>Trustworthy</h3>
+                    <p>All your infos are secured with us</p>
+                </Carousel.Caption>
+            </Carousel.Item>
         </Carousel>
     );
 }
