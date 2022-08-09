@@ -1,7 +1,8 @@
 import React from 'react';
 import './Institution_List.css';
+import Button from 'react-bootstrap/Button';
 
-const Institution_list = () => {
+const Institution_list = props => {
     let names = ['A', 'B', 'C'];
     let id = [1, 2, 3];
     let thana = ['A', 'B', 'C'];
@@ -19,9 +20,12 @@ const Institution_list = () => {
         <>
             <ol className='InsList'>
                 {Schools.map(School => {
-                    return <li>{School.name} {School.id} <a>{School.thana}</a> <img src="school.png" /></li>;
+                    return <li>{School.name} {School.id} <a>{School.thana}</a> <center><img src="school.png" width={"100px"} height={"100px"} /></center></li>;
                 })}
             </ol>
+            <Button variant="success" size="lg" className="add">
+                Add Institution
+            </Button>
         </>
     )
 }
