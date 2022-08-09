@@ -13,6 +13,7 @@ import S_SignUp from '../../SignUp/S_SignUp';
 import T_SignUp from '../../SignUp/T_SignUp';
 import G_SignUp from '../../SignUp/G_SignUp';
 import SignIn from '../../SignIn/SignIn';
+import Institution_list from '../../Institution_List/Institution_List';
 
 const Home = () => {
     const [items, setItems] = useState([{ id: 'c1', text: 'Login' }]);
@@ -61,6 +62,9 @@ const Home = () => {
                     </Route>
                     <Route path="/admin" exact>
                         <Admin />
+                    </Route>
+                    <Route path="/ins" exact>
+                        <Institution_list />
                     </Route>
                     <Redirect to="/" />
                 </Switch>

@@ -2,8 +2,8 @@
     float: left;
     width: 30%;
     height: 1000px;
-    text-align: center;
     background-color: rgb(76, 76, 82);
+    text-align: center;
 }
 
 .right {
@@ -15,4 +15,10 @@
 
 .Header {
     padding-top: 50px;
+    font-weight: bolder;
+}
+
+.hj {
+    color: rgb(227, 232, 236);
+    font-weight: bold;
 }
