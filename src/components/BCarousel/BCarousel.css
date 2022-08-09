@@ -1,13 +1,18 @@
 .yes {
-    width: 1000px;
-    margin-left: 15rem;
-    height: 900px;
-    padding-top: 10px;
+    width: 800px;
+    margin-left: 22rem;
+    height: 600px;
+    padding-top: 8px;
     padding-bottom: 40px;
 }
 
 .yes2 {
-    height: 900px;
-    padding-top: 10px;
+    height: 700px;
+    padding-top: 8px;
     padding-bottom: 40px;
+}
+
+.cap {
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }

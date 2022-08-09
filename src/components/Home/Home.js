@@ -12,11 +12,10 @@ import Admin from '../../Admin/Admin';
 import S_SignUp from '../../SignUp/S_SignUp';
 import T_SignUp from '../../SignUp/T_SignUp';
 import G_SignUp from '../../SignUp/G_SignUp';
+import SignIn from '../../SignIn/SignIn';
 
 const Home = () => {
-    const [items, setItems] = useState([{ id: 'c1', text: 'Login' },
-    { id: 'c2', text: 'Register' },
-    { id: 'c3', text: 'Yes' }]);
+    const [items, setItems] = useState([{ id: 'c1', text: 'Login' }]);
 
     const addNewGoalHandler = newGoal => {
         setItems(items.concat(newGoal));
@@ -29,12 +28,12 @@ const Home = () => {
                     <Route path="/" exact>
                         <Header />
                         <BCarousel />
-                        <List io={items} />
+                        {/* <List io={items} />
                         <NewGoal onAddGoal={addNewGoalHandler} />
                         <div className='col'>
                             <div className='l'> <p>HELLO</p> </div>
                             <div className='r'> <p>Bye</p> </div>
-                        </div>
+                        </div> */}
                     </Route>
                     <Route path="/about" exact>
                         <Header />
@@ -43,9 +42,6 @@ const Home = () => {
                     <Route path="/info" exact>
                         <Header />
                         <Information />
-                    </Route>
-                    <Route path="/signin" exact>
-                        <Header />
                     </Route>
                     <Route path="/s_signup" exact>
                         <Header />
@@ -58,6 +54,10 @@ const Home = () => {
                     <Route path="/g_signup" exact>
                         <Header />
                         <G_SignUp />
+                    </Route>
+                    <Route path="/signin" exact>
+                        <Header />
+                        <SignIn />
                     </Route>
                     <Route path="/admin" exact>
                         <Admin />

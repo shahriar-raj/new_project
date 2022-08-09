@@ -8,7 +8,7 @@ import './S_SignUp.css'
 
 const S_SignUp = () => {
     return (
-        <div className='form_d'>
+        <div className='form_s'>
             <h1><u><b>Student Register</b></u></h1>
             <br />
             <Row className="g-2">

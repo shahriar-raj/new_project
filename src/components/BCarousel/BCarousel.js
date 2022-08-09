@@ -8,44 +8,42 @@ function BCarousel() {
             <Carousel.Item className='yes2'>
                 <img
                     className="d-block w-100"
-                    src="pngtree-concept-of-online-exam-on-internet-png-image.png"
+                    src="student-details.png"
                     alt="First slide"
-                    height={"850px"}
-                    width={"500px"}
+                    height={"580px"}
+                    width={"400px"}
                 />
-                <Carousel.Caption >
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                <Carousel.Caption className='cap'>
+                    <h3>Easy to Use</h3>
+                    <p>User friendly interfaces for extracting infos</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item className='yes2'>
                 <img
                     className="d-block w-100"
-                    src="book-stack.png"
+                    src="classroom.png"
                     alt="Second slide"
-                    height={"850px"}
-                    width={"600px"}
+                    height={"580px"}
+                    width={"400px"}
                 />
 
-                <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <Carousel.Caption className='cap'>
+                    <h3>Efficient</h3>
+                    <p>Enhances class teaching time through automation of overhead works</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item className='yes2'>
                 <img
                     className="d-block w-100"
-                    src="book-stack1.png"
+                    src="school.png"
                     alt="Third slide"
-                    height={"850px"}
-                    width={"600px"}
+                    height={"580px"}
+                    width={"400px"}
                 />
 
-                <Carousel.Caption>
-                    <h3>Third slide label</h3>
-                    <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                    </p>
+                <Carousel.Caption className='cap'>
+                    <h3>All In One </h3>
+                    <p>Classes, Attendance, Results all managed in one system</p>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
