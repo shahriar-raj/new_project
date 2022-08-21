@@ -20,6 +20,10 @@ import Teacher from '../../Teacher/Teacher';
 import Guardian from '../../Guardian/Guardian';
 import Institution from '../../Institution/Institution';
 import Guest_Institution from '../../Guest_Institution/Guest_Institution';
+import Class from '../../Classes/Class';
+import ClassReg from '../../Classes/ClassReg';
+import SubjectSel from '../../Classes/SubjectSel';
+import TimeSel from '../../Ins_First_signin/TimeSel';
 
 const Home = () => {
     // const [items, setItems] = useState([{ id: 'c1', text: 'Login' }]);
@@ -28,26 +32,30 @@ const Home = () => {
     //     setItems(items.concat(newGoal));
     // }
 
-    const [data,setData] = React.useState([]);
+    const [data, setData] = React.useState([]);
     return (
         <div className='master'>
             <Router>
-            <Routes>
-                <Route path="/" element={<BCarousel />}/>
-                <Route path="/about" element={<About />}/>
-                <Route path="/info" element={<Information />}/>
-                <Route path="/guest-institution" element={<Guest_Institution />}/>
-                <Route path="/s_signup" element={<S_SignUp data={data} setData={setData}/>}/>
-                <Route path="/t_signup" element={<T_SignUp data={data} setData={setData}/>}/>
-                <Route path="/g_signup" element={<G_SignUp data={data} setData={setData}/>}/>
-                <Route path="/signin" element={<SignIn data={data} setData={setData} />}/>
-                <Route path="/admin" element={<Admin data={data} setData={setData} />}/>
-                <Route path="/welcome" element={<Welcome data={data} setData={setData} />}/>
-                <Route path="/institution_list" element={<Institution_list data={data} setData={setData} />}/>
-                <Route path="/student" element={<Student data={data} setData={setData} />}/>
-                <Route path="/teacher" element={<Teacher data={data} setData={setData} />}/>
-                <Route path="/guardian" element={<Guardian data={data} setData={setData} />}/>
-                <Route path="/institution" element={<Institution data={data} setData={setData} />}/>
+                <Routes>
+                    <Route path="/" element={<BCarousel />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/info" element={<Information />} />
+                    <Route path="/guest-institution" element={<Guest_Institution />} />
+                    <Route path="/s_signup" element={<S_SignUp data={data} setData={setData} />} />
+                    <Route path="/t_signup" element={<T_SignUp data={data} setData={setData} />} />
+                    <Route path="/g_signup" element={<G_SignUp data={data} setData={setData} />} />
+                    <Route path="/signin" element={<SignIn data={data} setData={setData} />} />
+                    <Route path="/admin" element={<Admin data={data} setData={setData} />} />
+                    <Route path="/welcome" element={<Welcome data={data} setData={setData} />} />
+                    <Route path="/institution_list" element={<Institution_list data={data} setData={setData} />} />
+                    <Route path="/student" element={<Student data={data} setData={setData} />} />
+                    <Route path="/teacher" element={<Teacher data={data} setData={setData} />} />
+                    <Route path="/guardian" element={<Guardian data={data} setData={setData} />} />
+                    <Route path="/institution" element={<Institution data={data} setData={setData} />} />
+                    <Route path="/classes" element={<Class data={data} setData={setData} />} />
+                    <Route path="/classreg" element={<ClassReg data={data} setData={setData} />} />
+                    <Route path="/subjectreg" element={<SubjectSel data={data} setData={setData} />} />
+                    <Route path="/timeselect" element={<TimeSel data={data} setData={setData} />} />
                 </Routes>
             </Router>
         </div>

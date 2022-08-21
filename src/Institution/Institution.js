@@ -1,12 +1,13 @@
 import Button from 'react-bootstrap/Button';
 import React from 'react';
 import Image from 'react-bootstrap/Image';
+import Card from 'react-bootstrap/Card';
 import './Institution.css';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 const Institution = (props) => {
-    const navigate=useNavigate();
-    const [data, setData] = useState(""); 
+    const navigate = useNavigate();
+    const [data, setData] = useState("");
     //console.log("Props data in loginpage " + props.data);
     const msg = {
         method: 'POST',
@@ -17,15 +18,16 @@ const Institution = (props) => {
             "id": props.data,
         })
     };
-    useEffect(() => {    
+    useEffect(() => {
         fetch("http://localhost:4000/institutionLogInInfo", msg)
-        .then(res => res.json())
-        .then(datum => {
-            console.log('button e click hoise abar abar');
-            //console.log(data.name);
-            //adminname=data.rows[0].NAME;
-            setData(datum.rows[0]);
-        })}, []);
+            .then(res => res.json())
+            .then(datum => {
+                console.log('button e click hoise abar abar');
+                //console.log(data.name);
+                //adminname=data.rows[0].NAME;
+                setData(datum.rows[0]);
+            })
+    }, []);
     return (
         <div>
             <div className='left'>
@@ -45,19 +47,20 @@ const Institution = (props) => {
                 <br />
                 <br />
                 <br />
-                <Button variant="danger" size="lg" onClick={(e) => navigate('/')}>
+                <Button variant="danger" size="lg" className='btn1' onClick={(e) => navigate('/')}>
                     Log Out
                 </Button>
             </div>
-            {/* <div className='right'>
-                <Image src="school1.png" width={"400px"} height={"400px"} />
-                <br />
-                <br />
-                <br />
-                <Button variant="primary" size="lg" onClick={(e) => {handleClick(e)}}>
-                    Added Institutions
-                </Button>
-            </div> */}
+            <div className='right'>
+                <div className='r_l'>
+                    <Button variant="dark" className='btn'>
+                        Classes
+                        <hr></hr>
+                        Here you can see all the classes of your Institution
+                    </Button>
+                    <br />
+                </div>
+            </div>
         </div>
     )
 }
