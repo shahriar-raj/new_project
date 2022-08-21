@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+<<<<<<< HEAD
 import {useEffect, useState} from 'react';
 import {Navigate, useNavigate} from 'react-router-dom';
 import Header from '../shared/components/Header';
@@ -77,6 +78,12 @@ import './SignIn.css';
     return (
         <div>
             <Header />
+=======
+import './SignIn.css';
+
+const SignIn = () => {
+    return (
+>>>>>>> eddb829aa314b693ce0f1f26e5cac782d2ec26a8
         <div className='sn'>
             <center><h1><u><b>Sign In</b></u></h1></center>
             <br />
@@ -87,7 +94,11 @@ import './SignIn.css';
                         label="User ID"
                         className="mb-3"
                     >
+<<<<<<< HEAD
                         <Form.Control type="number" placeholder="ID" value={id} onChange={(e)=> {setId(e.target.value)}}/>
+=======
+                        <Form.Control type="text" placeholder="ID" />
+>>>>>>> eddb829aa314b693ce0f1f26e5cac782d2ec26a8
                     </FloatingLabel>
                 </Col>
                 <Col>
@@ -95,7 +106,11 @@ import './SignIn.css';
                         controlId="floatingSelectType"
                         label="Login Type"
                     >
+<<<<<<< HEAD
                         <Form.Select aria-label="Floating label select example" value={type} onChange={(e)=> {setType(e.target.value)}}>
+=======
+                        <Form.Select aria-label="Floating label select example">
+>>>>>>> eddb829aa314b693ce0f1f26e5cac782d2ec26a8
                             {/* <option>Select Gender</option> */}
                             <option value="Student">Student</option>
                             <option value="Teacher">Teacher</option>
@@ -107,16 +122,27 @@ import './SignIn.css';
                 </Col>
             </Row>
             <FloatingLabel controlId="floatingPassword" label="Password">
+<<<<<<< HEAD
                 <Form.Control type="password" placeholder="Password" value={password} onChange={(e)=> {setPassword(e.target.value)}}/>
             </FloatingLabel>
             <br />
             <div className="d-grid gap-2">
                 <Button variant="success" size="lg" onClick={(e) => {handleClick(e)}}>
+=======
+                <Form.Control type="password" placeholder="Password" />
+            </FloatingLabel>
+            <br />
+            <div className="d-grid gap-2">
+                <Button variant="success" size="lg">
+>>>>>>> eddb829aa314b693ce0f1f26e5cac782d2ec26a8
                     Submit
                 </Button>
             </div>
         </div>
+<<<<<<< HEAD
         </div>
+=======
+>>>>>>> eddb829aa314b693ce0f1f26e5cac782d2ec26a8
     )
 }
 

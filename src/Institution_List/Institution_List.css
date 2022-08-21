@@ -1,7 +1,10 @@
 .InsList {
     margin: 25 px;
     padding-left: 20 px;
+<<<<<<< HEAD
     background-color: antiquewhite;
+=======
+>>>>>>> eddb829aa314b693ce0f1f26e5cac782d2ec26a8
 }
 
 .InsList li {
@@ -13,19 +16,26 @@
     margin-right: 25rem;
     margin-left: 18rem;
     margin-top: 30px;
+<<<<<<< HEAD
     margin-bottom: 30px;
+=======
+>>>>>>> eddb829aa314b693ce0f1f26e5cac782d2ec26a8
 }
 
 .bck {
     margin-left: 25rem;
     margin-top: 30px;
+<<<<<<< HEAD
     margin-bottom: 30px;
+=======
+>>>>>>> eddb829aa314b693ce0f1f26e5cac782d2ec26a8
 }
 
 .Head {
     font-weight: bolder;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: rgb(50, 50, 51);
+<<<<<<< HEAD
 }
 
 .buttons {
@@ -34,4 +44,6 @@
 
 .pg {
     background-color: antiquewhite;
+=======
+>>>>>>> eddb829aa314b693ce0f1f26e5cac782d2ec26a8
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import './About.css';
 import Footer from '../Footer/Footer';
+<<<<<<< HEAD
 import Header from '../shared/components/Header';
 
 const About = () => {
@@ -8,6 +9,11 @@ const About = () => {
     return (
         <div>
            <Header/>
+=======
+
+const About = () => {
+    return (
+>>>>>>> eddb829aa314b693ce0f1f26e5cac782d2ec26a8
         <>
             <div className='ab'>
                 <h1 className='head'><b><u>About</u></b></h1>
@@ -37,7 +43,10 @@ const About = () => {
             </div>
             <Footer />
         </>
+<<<<<<< HEAD
         </div>
+=======
+>>>>>>> eddb829aa314b693ce0f1f26e5cac782d2ec26a8
     )
 }
 

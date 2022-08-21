@@ -2,6 +2,7 @@ import Button from 'react-bootstrap/Button';
 import React from 'react';
 import Image from 'react-bootstrap/Image';
 import './Admin.css';
+<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 const Admin = (props) => {
@@ -30,6 +31,14 @@ const Admin = (props) => {
             e.preventDefault();
             navigate('/institution_list');
         }
+=======
+
+const Admin = () => {
+    let Name = "abrar";
+    let Id = 500001;
+    let contact = "01976837633";
+    let email = "abcd@gmail.com";
+>>>>>>> eddb829aa314b693ce0f1f26e5cac782d2ec26a8
     return (
         <div>
             <div className='left'>
@@ -38,6 +47,7 @@ const Admin = (props) => {
                 <Image src="admin.png" width={"100px"} height={"100px"} />
                 <br />
                 <br />
+<<<<<<< HEAD
                 <h4 className='hj'><u>Name:</u> {data.NAME}</h4>
                 <h4 className='hj'><u>Admin Id:</u> {data.ID}</h4>
                 <h4 className='hj'><u>Contact:</u> {data.CONTACT}</h4>
@@ -46,6 +56,16 @@ const Admin = (props) => {
                 <br />
                 <br />
                 <Button variant="danger" size="lg" onClick={(e) => navigate('/')}>
+=======
+                <h4 className='hj'><u>Name:</u> {Name}</h4>
+                <h4 className='hj'><u>Admin Id:</u> {Id}</h4>
+                <h4 className='hj'><u>Contact:</u> {contact}</h4>
+                <h4 className='hj'><u>Email:</u> {email}</h4>
+                <br />
+                <br />
+                <br />
+                <Button variant="danger" size="lg">
+>>>>>>> eddb829aa314b693ce0f1f26e5cac782d2ec26a8
                     Log Out
                 </Button>
             </div>
@@ -54,7 +74,11 @@ const Admin = (props) => {
                 <br />
                 <br />
                 <br />
+<<<<<<< HEAD
                 <Button variant="primary" size="lg" onClick={(e) => {handleClick(e)}}>
+=======
+                <Button variant="primary" size="lg">
+>>>>>>> eddb829aa314b693ce0f1f26e5cac782d2ec26a8
                     Added Institutions
                 </Button>
             </div>

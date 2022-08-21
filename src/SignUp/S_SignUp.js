@@ -65,7 +65,10 @@ const S_SignUp = (props) => {
         });
     }    
     return (
+<<<<<<< HEAD
         <div><Header/>
+=======
+>>>>>>> eddb829aa314b693ce0f1f26e5cac782d2ec26a8
         <div className='form_s'>
             <h1><u><b>Student Register</b></u></h1>
             <br />

@@ -2,6 +2,7 @@ import React from 'react';
 import './Institution_List.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
@@ -71,15 +72,45 @@ const Institution_list = (props) => {
             website: WebsiteLink[i],
             email: Email[i],
             post: PostOffice[i]
+=======
+
+const Institution_list = props => {
+    let Name = ['Amar School', 'Bekar School', 'Chor Schoool'];
+    let Id = [1000, 20000, 3000];
+    let Itype = ["College", "School", "School"];
+    let Thana = ['A', 'B', 'C'];
+    let District = ['A', 'B', 'C'];
+    let WebsiteLink = ['A', 'B', 'C'];
+    let Email = ['A', 'B', 'C'];
+    let PostOffice = ['A', 'B', 'C'];
+    const Schools = [{ name: Name[0], id: Id[0], thana:Thana[0], itype:Itype[0], district:District[0], website:WebsiteLink[0], email:Email[0], post:PostOffice[0]}];
+    for (let i = 1; i < Name.length; i++) {
+        const newIns = {
+            name: Name[i],
+            id: Id[i], 
+            thana:Thana[i], 
+            itype:Itype[i], 
+            district:District[i], 
+            website:WebsiteLink[i], 
+            email:Email[i], 
+            post:PostOffice[i]
+>>>>>>> eddb829aa314b693ce0f1f26e5cac782d2ec26a8
         };
         Schools.push(newIns);
         console.log(Schools);
     }
     return (
+<<<<<<< HEAD
         <div className='pg'>
             <center>
                 <h1 className="Head"><u>Institution List</u></h1>
             </center>
+=======
+        <>
+        <center>
+        <h1 className="Head"><u>Institution List</u></h1>
+        </center>
+>>>>>>> eddb829aa314b693ce0f1f26e5cac782d2ec26a8
             <ul className='InsList' type="none">
                 {Schools.map(School => {
                     return <li>
@@ -104,6 +135,7 @@ const Institution_list = (props) => {
                     </li>;
                 })}
             </ul>
+<<<<<<< HEAD
             <div className='buttons'>
                 <Button variant="danger" size="lg" className="bck" onClick={(e) => { handleClick(e) }}>
                     Back to Profile
@@ -114,6 +146,15 @@ const Institution_list = (props) => {
                 </Button>
             </div>
         </div>
+=======
+            <Button variant="danger" size="lg" className="bck">
+                Back to Profile
+            </Button>
+            <Button variant="success" size="lg" className="add">
+                Add Institution
+            </Button>
+        </>
+>>>>>>> eddb829aa314b693ce0f1f26e5cac782d2ec26a8
     )
 }
 
