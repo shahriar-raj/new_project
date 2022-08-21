@@ -4,11 +4,69 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Header from '../shared/components/Header';
+import {useState, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 import './T_SignUp.css'
 
-const T_SignUp = () => {
+const T_SignUp = (props) => {
+    const [Name, setName] = useState("");
+    const [Password, setPassword] = useState("");
+    const [Email, setEmail] = useState("");
+    const [Interest, setInterest] = useState("");
+    const [Gender, setGender] = useState("Male");
+    const [Address, setAddress] = useState("");
+    const [Contact, setContact] = useState("");
+    const [InstitutionId, setInstitutionId] = useState();
+    const [Day, setDay] = useState(1);
+    const [Month, setMonth] = useState("Jan");
+    const [Year, setYear] = useState(1940);
+    const navigate=useNavigate();
+
+    const handleClick = (e) =>{
+        e.preventDefault();
+
+        console.log('button e click hoise');
+        const a1=Day.toString();
+        const a2=Year.toString();
+        //console.log(a1 + a2);
+        const dob = a1 + "/" + Month + "/" + a2;
+        console.log(dob);
+
+        const msg = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "name": Name,
+                "password": Password,
+                "email": Email,
+                "interest": Interest,
+                "gender": Gender,
+                "address": Address,
+                "contact": Contact,
+                "institution_id": InstitutionId,
+                "dateofbirth": dob
+            })
+        };
+        fetch("http://localhost:4000/TeacherSignUp",msg)
+         .then(res => res.json())
+           .then(data => {
+          console.log('button e click hoise abar abar'); 
+          console.log(data);
+          if(!data.isDone){
+            alert('Id with this institution does not exist!');
+          }
+          else{
+             props.setData(data.id);
+             navigate('/welcome');
+          }
+        });
+    }
     return (
-        <div className='form_d'>
+        <div><Header/>
+        <div className='form_t'>
             <h1><u><b>Teacher Register</b></u></h1>
             <br />
             <Row className="g-2">
@@ -18,12 +76,12 @@ const T_SignUp = () => {
                         label="Name"
                         className="mb-3"
                     >
-                        <Form.Control type="text" placeholder="name" />
+                        <Form.Control type="text" placeholder="name" value={Name} onChange={(e)=> {setName(e.target.value)}}/>
                     </FloatingLabel>
                 </Col>
                 <Col>
                     <FloatingLabel controlId="floatingPassword" label="Password">
-                        <Form.Control type="password" placeholder="Password" />
+                        <Form.Control type="password" placeholder="Password" value={Password} onChange={(e)=> {setPassword(e.target.value)}}/>
                     </FloatingLabel>
                 </Col>
             </Row>
@@ -32,7 +90,7 @@ const T_SignUp = () => {
                 label="Email address"
                 className="mb-3"
             >
-                <Form.Control type="email" placeholder="name@example.com" />
+                <Form.Control type="email" placeholder="name@example.com" value={Email} onChange={(e)=> {setEmail(e.target.value)}}/>
             </FloatingLabel>
             <Row className="g-2">
                 <Col md>
@@ -41,7 +99,7 @@ const T_SignUp = () => {
                         label="Interest"
                         className="mb-3"
                     >
-                        <Form.Control type="text" placeholder="interests" />
+                        <Form.Control type="text" placeholder="interests" value={Interest} onChange={(e)=> {setInterest(e.target.value)}}/>
                     </FloatingLabel>
                 </Col>
                 <Col md>
@@ -49,7 +107,7 @@ const T_SignUp = () => {
                         controlId="floatingSelectGender"
                         label="Gender"
                     >
-                        <Form.Select aria-label="Floating label select example">
+                        <Form.Select aria-label="Floating label select example" value={Gender} onChange={(e)=> {setGender(e.target.value)}}>
                             {/* <option>Select Gender</option> */}
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
@@ -64,7 +122,7 @@ const T_SignUp = () => {
                 label="Address"
                 className="mb-3"
             >
-                <Form.Control type="text" placeholder="Address" />
+                <Form.Control type="text" placeholder="Address" value={Address} onChange={(e)=> {setAddress(e.target.value)}}/>
             </FloatingLabel>
             <Row className="g-3">
                 <Col md>
@@ -73,7 +131,7 @@ const T_SignUp = () => {
                         label="Contact"
                         className="mb-3"
                     >
-                        <Form.Control type="text" placeholder="Contact" />
+                        <Form.Control type="text" placeholder="Contact" value={Contact} onChange={(e)=> {setContact(e.target.value)}}/>
                     </FloatingLabel>
                 </Col>
                 <Col md>
@@ -82,7 +140,7 @@ const T_SignUp = () => {
                         label="Institution_ID"
                         className="mb-3"
                     >
-                        <Form.Control type="text" placeholder="Institution_Id" />
+                        <Form.Control type="text" placeholder="Institution_Id" value={InstitutionId} onChange={(e)=> {setInstitutionId(e.target.value)}}/>
                     </FloatingLabel>
                 </Col>
             </Row>
@@ -90,7 +148,7 @@ const T_SignUp = () => {
             <Row className="g-3">
                 <Col md>
                     <FloatingLabel controlId="floatingInputDay" label="Day">
-                        <Form.Select aria-label="Floating label select example">
+                        <Form.Select aria-label="Floating label select example" value={Day} onChange={(e)=> {setDay(e.target.value)}}>
                             {/* <option>Select Gender</option> */}
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -130,7 +188,7 @@ const T_SignUp = () => {
                         controlId="floatingSelectMonth"
                         label="Month"
                     >
-                        <Form.Select aria-label="Floating label select example">
+                        <Form.Select aria-label="Floating label select example" value={Month} onChange={(e)=> {setMonth(e.target.value)}}>
                             {/* <option>Select Gender</option> */}
                             <option value="Jan">January</option>
                             <option value="Feb">February</option>
@@ -149,7 +207,7 @@ const T_SignUp = () => {
                 </Col>
                 <Col md>
                     <FloatingLabel controlId="floatingInputYear" label="Year">
-                        <Form.Select aria-label="Floating label select example">
+                        <Form.Select aria-label="Floating label select example" value={Year} onChange={(e)=> {setYear(e.target.value)}}>
                             {/* <option>Select Gender</option> */}
                             <option value="1950">1950</option>
                             <option value="1951">1951</option>
@@ -230,10 +288,11 @@ const T_SignUp = () => {
             </Row>
             <br />
             <div className="d-grid gap-2">
-                <Button variant="success" size="lg">
+                <Button variant="success" size="lg" onClick={(e) => {handleClick(e)}}>
                     Submit
                 </Button>
             </div>
+        </div>
         </div>
     )
 }

@@ -1,13 +1,13 @@
 import Button from 'react-bootstrap/Button';
 import React from 'react';
 import Image from 'react-bootstrap/Image';
-import './Admin.css';
+import './Teacher.css';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-const Admin = (props) => {
+const Teacher = (props) => {
     const navigate=useNavigate();
     const [data, setData] = useState(""); 
-    console.log("Props data in adminloginpage " + props.data);
+    //console.log("Props data in loginpage " + props.data);
     const msg = {
         method: 'POST',
         headers: {
@@ -18,7 +18,7 @@ const Admin = (props) => {
         })
     };
     useEffect(() => {    
-        fetch("http://localhost:4000/adminLogInInfo", msg)
+        fetch("http://localhost:4000/teacherLogInInfo", msg)
         .then(res => res.json())
         .then(datum => {
             console.log('button e click hoise abar abar');
@@ -26,22 +26,20 @@ const Admin = (props) => {
             //adminname=data.rows[0].NAME;
             setData(datum.rows[0]);
         })}, []);
-        const handleClick = (e) =>{
-            e.preventDefault();
-            navigate('/institution_list');
-        }
     return (
         <div>
             <div className='left'>
-                <h1 className='Header'><u>Admin</u></h1>
+                <h1 className='Header'><u>Teacher</u></h1>
                 <br />
-                <Image src="admin.png" width={"100px"} height={"100px"} />
+                <Image src="teacher.png" width={"100px"} height={"100px"} />
                 <br />
                 <br />
                 <h4 className='hj'><u>Name:</u> {data.NAME}</h4>
-                <h4 className='hj'><u>Admin Id:</u> {data.ID}</h4>
+                <h4 className='hj'><u>Id:</u> {data.ID}</h4>
                 <h4 className='hj'><u>Contact:</u> {data.CONTACT}</h4>
                 <h4 className='hj'><u>Email:</u> {data.EMAIL}</h4>
+                <h4 className='hj'><u>Gender:</u> {data.GENDER}</h4>
+                <h4 className='hj'><u>Address:</u> {data.ADRESS}</h4>
                 <br />
                 <br />
                 <br />
@@ -49,7 +47,7 @@ const Admin = (props) => {
                     Log Out
                 </Button>
             </div>
-            <div className='right'>
+            {/* <div className='right'>
                 <Image src="school1.png" width={"400px"} height={"400px"} />
                 <br />
                 <br />
@@ -57,9 +55,9 @@ const Admin = (props) => {
                 <Button variant="primary" size="lg" onClick={(e) => {handleClick(e)}}>
                     Added Institutions
                 </Button>
-            </div>
+            </div> */}
         </div>
     )
 }
 
-export default Admin;
+export default Teacher;

@@ -4,10 +4,71 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import './G_SignUp.css'
+import Header from '../shared/components/Header';
+import {useState, useEffect} from 'react';
+import {Navigate, useNavigate} from 'react-router-dom';
+import './G_SignUp.css';
 
-const G_SignUp = () => {
+const G_SignUp = (props) => {
+    const [Name, setName] = useState("");
+    const [Password, setPassword] = useState("");
+    const [Email, setEmail] = useState("");
+    const [Profession, setProfession] = useState("");
+    const [Gender, setGender] = useState("Male");
+    const [Address, setAddress] = useState("");
+    const [Contact, setContact] = useState("");
+    const [StudentId, setStudentId] = useState();
+    const [Relation, setRelation] = useState("");
+    const [Day, setDay] = useState(1);
+    const [Month, setMonth] = useState("Jan");
+    const [Year, setYear] = useState(1940);
+    const navigate=useNavigate();
+
+    const handleClick = (e) =>{
+        e.preventDefault();
+
+        console.log('button e click hoise');
+        const a1=Day.toString();
+        const a2=Year.toString();
+        //console.log(a1 + a2);
+        const dob = a1 + "/" + Month + "/" + a2;
+        console.log(dob);
+
+        const msg = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "name": Name,
+                "password": Password,
+                "email": Email,
+                "profession": Profession,
+                "gender": Gender,
+                "address": Address,
+                "contact": Contact,
+                "student_id": StudentId,
+                "relation": Relation,
+                "dateofbirth": dob
+            })
+        };
+        fetch("http://localhost:4000/GuardianSignUp",msg)
+         .then(res => res.json())
+           .then(data => {
+          console.log('button e click hoise abar abar'); 
+          console.log(data);
+          if(!data.isDone){
+            alert('Id with this student does not exist!');
+          }
+          else{
+             props.setData(data.id);
+             navigate('/welcome');
+          }
+        });
+    }
     return (
+        <div>
+            <Header/>
         <div className='form_d'>
             <h1><u><b>Guardian Register</b></u></h1>
             <br />
@@ -18,12 +79,12 @@ const G_SignUp = () => {
                         label="Name"
                         className="mb-3"
                     >
-                        <Form.Control type="text" placeholder="name" />
+                        <Form.Control type="text" placeholder="name" value={Name} onChange={(e)=> {setName(e.target.value)}}/>
                     </FloatingLabel>
                 </Col>
                 <Col>
                     <FloatingLabel controlId="floatingPassword" label="Password">
-                        <Form.Control type="password" placeholder="Password" />
+                        <Form.Control type="password" placeholder="Password" value={Password} onChange={(e)=> {setPassword(e.target.value)}}/>
                     </FloatingLabel>
                 </Col>
             </Row>
@@ -32,7 +93,7 @@ const G_SignUp = () => {
                 label="Email address"
                 className="mb-3"
             >
-                <Form.Control type="email" placeholder="name@example.com" />
+                <Form.Control type="email" placeholder="name@example.com" value={Email} onChange={(e)=> {setEmail(e.target.value)}}/>
             </FloatingLabel>
             <Row className="g-2">
                 <Col md>
@@ -41,7 +102,7 @@ const G_SignUp = () => {
                         label="Profession"
                         className="mb-3"
                     >
-                        <Form.Control type="text" placeholder="profession" />
+                        <Form.Control type="text" placeholder="profession" value={Profession} onChange={(e)=> {setProfession(e.target.value)}}/>
                     </FloatingLabel>
                 </Col>
                 <Col md>
@@ -49,7 +110,7 @@ const G_SignUp = () => {
                         controlId="floatingSelectGender"
                         label="Gender"
                     >
-                        <Form.Select aria-label="Floating label select example">
+                        <Form.Select aria-label="Floating label select example" value={Gender} onChange={(e)=> {setGender(e.target.value)}}>
                             {/* <option>Select Gender</option> */}
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
@@ -64,7 +125,7 @@ const G_SignUp = () => {
                 label="Address"
                 className="mb-3"
             >
-                <Form.Control type="text" placeholder="Address" />
+                <Form.Control type="text" placeholder="Address" value={Address} onChange={(e)=> {setAddress(e.target.value)}}/>
             </FloatingLabel>
             <Row className="g-3">
                 <Col md>
@@ -73,7 +134,7 @@ const G_SignUp = () => {
                         label="Contact"
                         className="mb-3"
                     >
-                        <Form.Control type="text" placeholder="Contact" />
+                        <Form.Control type="text" placeholder="Contact" value={Contact} onChange={(e)=> {setContact(e.target.value)}}/>
                     </FloatingLabel>
                 </Col>
                 <Col md>
@@ -82,7 +143,7 @@ const G_SignUp = () => {
                         label="Student_ID"
                         className="mb-3"
                     >
-                        <Form.Control type="text" placeholder="Student_Id" />
+                        <Form.Control type="text" placeholder="Student_Id" value={StudentId} onChange={(e)=> {setStudentId(e.target.value)}}/>
                     </FloatingLabel>
                 </Col>
             </Row>
@@ -93,7 +154,7 @@ const G_SignUp = () => {
                         label="Relation"
                         className="mb-3"
                     >
-                        <Form.Control type="text" placeholder="Relation" />
+                        <Form.Control type="text" placeholder="Relation" value={Relation} onChange={(e)=> {setRelation(e.target.value)}}/>
                     </FloatingLabel>
                 </Col>
                 <Col md>
@@ -103,7 +164,7 @@ const G_SignUp = () => {
             <Row className="g-3">
                 <Col md>
                     <FloatingLabel controlId="floatingInputDay" label="Day">
-                        <Form.Select aria-label="Floating label select example">
+                        <Form.Select aria-label="Floating label select example" value={Day} onChange={(e)=> {setDay(e.target.value)}}>
                             {/* <option>Select Gender</option> */}
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -143,7 +204,7 @@ const G_SignUp = () => {
                         controlId="floatingSelectMonth"
                         label="Month"
                     >
-                        <Form.Select aria-label="Floating label select example">
+                        <Form.Select aria-label="Floating label select example" value={Month} onChange={(e)=> {setMonth(e.target.value)}}>
                             {/* <option>Select Gender</option> */}
                             <option value="Jan">January</option>
                             <option value="Feb">February</option>
@@ -162,8 +223,18 @@ const G_SignUp = () => {
                 </Col>
                 <Col md>
                     <FloatingLabel controlId="floatingInputYear" label="Year">
-                        <Form.Select aria-label="Floating label select example">
+                        <Form.Select aria-label="Floating label select example" value={Year} onChange={(e)=> {setYear(e.target.value)}}>
                             {/* <option>Select Gender</option> */}
+                            <option value="1940">1940</option>
+                            <option value="1941">1941</option>
+                            <option value="1942">1942</option>
+                            <option value="1943">1943</option>
+                            <option value="1944">1944</option>
+                            <option value="1945">1945</option>
+                            <option value="1946">1946</option>
+                            <option value="1947">1947</option>
+                            <option value="1948">1948</option>
+                            <option value="1949">1949</option>
                             <option value="1950">1950</option>
                             <option value="1951">1951</option>
                             <option value="1952">1952</option>
@@ -243,10 +314,11 @@ const G_SignUp = () => {
             </Row>
             <br />
             <div className="d-grid gap-2">
-                <Button variant="success" size="lg">
+                <Button variant="success" size="lg" onClick={(e) => {handleClick(e)}}>
                     Submit
                 </Button>
             </div>
+        </div>
         </div>
     )
 }

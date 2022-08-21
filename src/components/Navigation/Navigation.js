@@ -21,7 +21,13 @@ const Navigation = () => {
                             </NavDropdown.Item>
                             <NavDropdown.Item href="/g_signup">As Guardian</NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link href="/signin"><b>SignIn</b></Nav.Link>
+                        {/* <Nav.Link href="/signin"><b>SignIn</b></Nav.Link> */}
+                        <NavDropdown title="SignIn" id="basic-nav-dropdown">
+                            <NavDropdown.Item href="/SignIn">As Student</NavDropdown.Item>
+                            <NavDropdown.Item href="/SignIn">
+                                Others
+                            </NavDropdown.Item>
+                        </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
